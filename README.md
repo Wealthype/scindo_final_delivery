@@ -28,5 +28,9 @@
         'default_probability': 0.0855, 
         'sign': 1
     }
-##### sign = 1 : non erogare il prestito
-##### sign = 0 : puoi erogare il prestito
+
+##### sign è la decisione finale di algoritmi:
+     sign =  {
+         1 : non erogare il prestito
+         0 : puoi erogare il prestito
+     }
