@@ -4,7 +4,7 @@
 
 # 1) training pipeline:
 
-##### training_pipeline consiste 3 classi che fanno i parassi della creazione di modelli.
+##### training_pipeline consiste 3 classi che fanno i parassi della creazione di modelli.
 #####   - input_controller:
 ######    controlla l'esistenza e correttezza del file csv (input)
 #####   - input_ingestor:
