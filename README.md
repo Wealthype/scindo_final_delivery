@@ -8,10 +8,10 @@
 ####   - input_controller:
 #####    controlla l'esistenza e correttezza del file csv [/input](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/input)
 ####   - input_ingestor:
-#####    consiste la preparazione di un pandas dataframe pronto per modelli ML
+#####    consiste la preparazione di un pandas dataframe pronto per addestrare modelli ML
 ####   - trainer:
 #####    addestra e salva i modelli nella cartella [/built_models](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/built_models)
-#####    le metriche reportistiche del modello viene salvato nella cartella /report 
+#####    le metriche reportistiche del modello viene salvato nella cartella [/report](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/report) 
 
 
 # 2) prediction pipeline
