@@ -23,8 +23,8 @@
 ####   - predictor:
 #####    interroga gli algoritmi di ML ([/built_models](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/built_models)), di prior ([/built_models](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/prior_default_probability_loans/output_model)), e di BI 
 #####    l'output è un JSON del tipo:
-{
-'UserID': 1, 
-'default_probability': 0.0855, 
-'sign': 1
-}
+    {
+    'UserID': 1, 
+    'default_probability': 0.0855, 
+    'sign': 1
+    }
