@@ -7,7 +7,7 @@
 #### training_pipeline consiste 3 classi che fanno i parassi della creazione di modelli.
 ####   - input_controller:
 #####    controlla l'esistenza e correttezza del file csv (input)
-######   /esempio: https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/input
+######   esempio: (https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/input)
 ####   - input_ingestor:
 #####    consiste la preparazione di un pandas dataframe pronto per modelli ML
 ####   - trainer:
