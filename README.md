@@ -30,7 +30,7 @@
      }
 
 # config file
-##### config file contiene le variabili utilizzati nelle classi
+##### config file contiene le variabili utilizzati nelle classi [config](https://github.com/bizhanzahedi/scindo_final_delivery/blob/main/config.py)
 
 ##### 1) le mappe:
 ######   sia il pipeline di training che il pipeline di prediction si aspettano valori codificati per evitare stringhe nelle file CSV e JSON
