@@ -34,3 +34,32 @@
          1 : non erogare il prestito
          0 : puoi erogare il prestito
      }
+
+# config file
+##### config file contiene le variabili utilizzati nelle classi
+
+##### 1) le mappe:
+######   sia il pipeline di training che il pipeline di prediction si aspettano valori codificati per evitare stringhe nelle file CSV e JSON
+######   :
+       map_Address, map_Gender, map_Position, map_Education, map_Sector, map_Device
+######   i valori codificati vengono ulteriormente controllati
+######   :
+       encoded_variables
+
+
+##### 2) le chiavi del JSON:
+######   il pipeline di prediction si aspetta chiavi predefiniti, questo viene controllato
+######   :
+       variables_1st_layer, variables_user_layer, variables_behaviour_layer, variables_genericinfo_layer, variables_job_layer
+       variables_finance_layer, variables_balance_layer, variables_cumsum_layer, variables_eop_layer, variables_totalloans_layer
+
+##### 3) le colonne del CSV:
+######   il pipeline di training si aspetta chiavi predefiniti, questo viene controllato
+######   :
+       all_variables
+
+##### 4) la tipologia dei valori:
+######   sia il pipeline di training che il pipeline di prediction si aspettano valori di un certo tipo predefinito, questo viene controllato
+######   :
+       string_variables, int_variables, float_variables, boolean_variables, 
+       
