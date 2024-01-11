@@ -13,7 +13,7 @@
 
 # 2) prediction pipeline
 #### prediction pipeline consiste 3 classi che fanno i prassi dell'utilizzo di modelli.
-####   - input_controller: controlla l'esistenza e correttezza delle chiavi e valori del file JSON [/input](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/input)
+####   - input_controller: controlla l'esistenza e correttezza delle chiavi e valori del file JSON [input](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/input)
 ####   - input_ingestor: consiste la preparazione di un JSON pronto per modelli ML e BI
 ####   - predictor: interroga gli algoritmi di ML ([built_models](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/built_models)), di prior ([prior](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/prior_default_probability_loans/output_model)), e di BI 
 ####    l'output è un JSON del tipo:
