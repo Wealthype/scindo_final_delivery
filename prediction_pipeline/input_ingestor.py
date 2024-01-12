@@ -203,5 +203,4 @@ class prediction_input_ingestor:
             "in_out_index" : body["User_Finance_Cumsum_In"] / body["User_Finance_Cumsum_Out"]
         }
 
-        print(body_ml)
         return body_ml
