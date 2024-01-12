@@ -124,6 +124,11 @@ class train_input_ingestion:
         df_ml["income_debt_index"] = df["User_Finance_Cumsum_In"] / (df["User_Finance_EoP_Loans"] + df["User_Finance_EoP_Mortgages"])
         df_ml["wealth_debt_index"] = (df["User_Finance_Balance_Avg"] + df["User_Finance_EoP_Deposit"] + df["User_Finance_EoP_Investments"]) / (df["User_Finance_EoP_Loans"] + df["User_Finance_EoP_Mortgages"])
         df_ml["in_out_index"] = df["User_Finance_Cumsum_In"] / df["User_Finance_Cumsum_Out"]
-        df_ml["target"] = df["User_Behaviour_Default"]
+        df_ml["target"] = df["User_Behaviour_Default"].map(
+            {
+                False : 0,
+                True : 1
+            }
+        )
 
         return df_ml

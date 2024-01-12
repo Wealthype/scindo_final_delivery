@@ -136,8 +136,7 @@ int_variables = [
     "User_Job_Position", "User_Job_Education", "User_Behaviour_Device",
     "User_GenericInfo_Birth",  "User_Behaviour_OnboardingTime",
     "User_Behaviour_Lifetime", "User_Behaviour_WeeklyVisitNumber", "User_Finance_TotalLoans_Number", 
-    "User_Finance_RID", "User_Finance_AvarageCreditSpending",
-    "User_Finance_AvarageAccountSpending"
+    "User_Finance_RID"
 ]
 
 # float variables: 11
@@ -146,7 +145,7 @@ float_variables = [
     "User_Finance_Cumsum_In", "User_Finance_Cumsum_Out",
     "User_Finance_Balance_Avg", "User_Finance_Balance_Min", "User_Finance_Balance_Max", "User_Finance_Balance_Withdrawls",
     "User_Finance_EoP_Deposit", "User_Finance_EoP_Investments", "User_Finance_EoP_Loans", "User_Finance_EoP_Mortgages",
-
+    "User_Finance_AvarageCreditSpending", "User_Finance_AvarageAccountSpending"
 ]
 
 # bool variables: 3

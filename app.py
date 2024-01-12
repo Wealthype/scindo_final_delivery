@@ -36,7 +36,7 @@ def default_probability_prediction():
     elif request.method == "PUT":
         
         controller = train_input_controller()
-        estimator = trainer()
+        train = trainer()
    
         # Input
         df = pd.read_csv(request.files['train_initial.csv'])
@@ -46,9 +46,9 @@ def default_probability_prediction():
         if result["flag"] == True: return result["response"], result["response_code"]
 
         # Call the calculator
-        estimate = estimator.run(df=df)
+        answer = train.run(df=df)
 
-        return jsonify(estimate), 200
+        return jsonify(answer), 200
 
 
 if __name__ == "__main__":

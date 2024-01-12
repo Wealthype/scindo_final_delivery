@@ -355,47 +355,47 @@ class trainer:
         self.y = self.df["target"]
 
         model, f1_score, model_details = self.ml_logistic_regression()
-        if f1_score > 0.5:
-            with open('report/model_logistic_regression.json', "w") as outfile: 
-                json.dump(model_details, outfile, indent=4)
-            
-            with open('built_models/model_logistic_regression.pkl', "wb") as outfile: 
-                pickle.dump(model, outfile)
+
+        with open('report/model_logistic_regression.json', "w") as outfile: 
+            json.dump(model_details, outfile, indent=4)
+        
+        with open('built_models/model_logistic_regression.pkl', "wb") as outfile: 
+            pickle.dump(model, outfile)
 
 
         model, f1_score, model_details = self.ml_complement_nb()
-        if f1_score > 0.5:
-            with open('report/model_complement_naive_bayes.json', "w") as outfile: 
-                json.dump(model_details, outfile, indent=4)
-            
-            with open('built_models/model_complement_naive_bayes.pkl', "wb") as outfile: 
-                pickle.dump(model, outfile)
+
+        with open('report/model_complement_naive_bayes.json', "w") as outfile: 
+            json.dump(model_details, outfile, indent=4)
+        
+        with open('built_models/model_complement_naive_bayes.pkl', "wb") as outfile: 
+            pickle.dump(model, outfile)
 
 
         model, f1_score, model_details = self.ml_svc()
-        if f1_score > 0.5:
-            with open('report/model_one_class_svm.json', "w") as outfile: 
-                json.dump(model_details, outfile, indent=4)
 
-            with open('built_models/model_one_class_svm.pkl', "wb") as outfile: 
-                pickle.dump(model, outfile)
+        with open('report/model_svc.json', "w") as outfile: 
+            json.dump(model_details, outfile, indent=4)
+
+        with open('built_models/model_svc.pkl', "wb") as outfile: 
+            pickle.dump(model, outfile)
 
         
         model, f1_score, model_details = self.ml_isolation_forest()
-        if f1_score > 0.5:
-            with open('report/model_isolation_forest.json', "w") as outfile: 
-                json.dump(model_details, outfile, indent=4)
 
-            with open('built_models/model_isolation_forest.pkl', "wb") as outfile: 
-                pickle.dump(model, outfile)
+        with open('report/model_isolation_forest.json', "w") as outfile: 
+            json.dump(model_details, outfile, indent=4)
+
+        with open('built_models/model_isolation_forest.pkl', "wb") as outfile: 
+            pickle.dump(model, outfile)
 
 
         model, f1_score, model_details = self.ml_oneclass_svm()
-        if f1_score > 0.5:
-            with open('report/model_oneclass_svm.json', "w") as outfile: 
-                json.dump(model_details, outfile, indent=4)
 
-            with open('built_models/model_oneclass_svm.pkl', "wb") as outfile: 
-                pickle.dump(model, outfile)
+        with open('report/model_oneclass_svm.json', "w") as outfile: 
+            json.dump(model_details, outfile, indent=4)
+
+        with open('built_models/model_oneclass_svm.pkl', "wb") as outfile: 
+            pickle.dump(model, outfile)
 
         return "the training was executed completely"

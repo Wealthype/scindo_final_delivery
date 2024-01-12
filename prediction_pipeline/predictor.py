@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from prediction_pipeline.input_ingestor import prediction_input_ingestor
 from config import one_hot_encode
-
+import json
 class predictor:
 
     def __init__(self):
@@ -25,10 +25,16 @@ class predictor:
         self.cnb = pickle.load(open('built_models/model_complement_naive_bayes.pkl', 'rb'))
 
         # read ml model: SVC
-        self.svc = pickle.load(open('built_models/model_one_class_svm.pkl', 'rb'))
+        self.svc = pickle.load(open('built_models/model_svc.pkl', 'rb'))
 
         # read ml model: Logistic Regression
         self.lr = pickle.load(open('built_models/model_logistic_regression.pkl', 'rb'))
+
+        # read ml model: Isolation Forest
+        self.isf = pickle.load(open('built_models/model_isolation_forest.pkl', 'rb'))
+
+        # read ml model: Oneclass svm
+        self.ocs = pickle.load(open('built_models/model_oneclass_svm.pkl', 'rb'))
 
         # read the Encoder
         self.encoder = pickle.load(open("built_models/encoder.pkl", 'rb'))
@@ -188,18 +194,55 @@ class predictor:
         df[self.encoder.get_feature_names_out(one_hot_encode)] = transformed_df
 
         # predict and aggregate the result
-        cnb_f1 = 0.66
-        svc_f1 = 0.55
-        lr_f1 = 0.73
-        sum = cnb_f1 + svc_f1 + lr_f1
+        prediction_weights = {}
+        prediction_weights["cnb_f1"] = json.load(open("report/model_complement_naive_bayes.json", "r"))
+        prediction_weights["svc_f1"] = json.load(open("report/model_svc.json", "r"))
+        prediction_weights["lr_f1"] = json.load(open("report/model_logistic_regression.json", "r"))
+        prediction_weights["isf_f1"] = json.load(open("report/model_isolation_forest.json", "r"))
+        prediction_weights["ocs_f1"] = json.load(open("report/model_oneclass_svm.json", "r"))
 
-        cnb_prediction = self.cnb.predict(df) * cnb_f1
-        svc_prediction = self.svc.predict(df) * svc_f1
-        lr_prediction = self.lr.predict(df) * lr_f1
+        predictions = {}
 
-        result = (cnb_prediction + svc_prediction + lr_prediction) / sum
+        sum = 0
+        for key, value in prediction_weights.items():
 
-        print("ML: ", result[0])
+            # modelli con f1 < 0.5 non contribuiscono al prediction
+            if value["f1_score"] > 0:
+                sum += value["f1_score"] 
+            else:
+                continue
+            
+            if key == "cnb_f1":
+                predictions["cnb_prediction"] = self.cnb.predict(df) * value["f1_score"] 
+        
+            elif key == "svc_f1":
+                predictions["svc_prediction"] = self.svc.predict(df) * value["f1_score"] 
+            
+            elif key == "lr_f1":
+                predictions["lr_prediction"] = self.lr.predict(df) * value["f1_score"] 
+
+            elif key == "isf_f1":
+                predict = self.isf.predict(df)
+                print("isf: ", predict)
+                print("---------------")
+                if predict == 1:
+                    predictions["isf_prediction"] = 0 * value["f1_score"] 
+                elif predict == -1:
+                    predictions["isf_prediction"] = 1 * value["f1_score"] 
+
+            elif key == "ocs_f1":
+                predict = self.ocs.predict(df)
+                print("ocf: ", predict)
+                print("---------------")
+                if predict == 1:
+                    predictions["ocs_prediction"] = 0 * value["f1_score"] 
+                elif predict == -1:
+                    predictions["ocs_prediction"] = 1 * value["f1_score"] 
+
+
+        result = np.sum(list(predictions.values())) / sum
+
+        print("ML: ", result)
 
         return round(result[0], 2)
 
