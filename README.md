@@ -9,6 +9,8 @@
 ####   - input_ingestor: consiste la preparazione di un pandas dataframe pronto per addestrare modelli ML
 ####   - trainer: addestra e salva i modelli nella cartella [built_models](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/built_models)
 ####    le metriche reportistiche del modello viene salvato nella cartella [report](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/report) 
+####    l'input è un file csv con le seguenti colonne:
+    UserID,User_GenericInfo_Birth,User_Job_Education,User_GenericInfo_Address,User_Job_Position,User_GenericInfo_Gender,User_Job_Sector,User_Behaviour_Device,User_Finance_TotalLoans_Salary,User_Job_Employed,User_Finance_Balance_Withdrawls,User_Finance_AvarageAccountSpending,User_Finance_RID,User_Finance_AvarageCreditSpending,User_Finance_AvarageTransactionsAmount,User_Behaviour_RegistrationDatetime,User_Behaviour_OnboardingTime,User_Behaviour_WeeklyVisitNumber,User_Behaviour_Lifetime,User_Finance_TotalLoans_Amount,User_Finance_TotalLoans_Number,User_GenericInfo_Type,User_Finance_Balance_Min,User_Finance_Balance_Max,User_Finance_Balance_Avg,User_Finance_Cumsum_In,User_Finance_Cumsum_Out,User_Finance_EoP_Loans,User_Finance_EoP_Mortgages,User_Finance_EoP_Deposit,User_Finance_EoP_Investments,User_Behaviour_Default
 
 
 # 2) prediction pipeline
