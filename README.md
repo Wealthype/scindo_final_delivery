@@ -93,6 +93,11 @@
          0 : puoi erogare il prestito
      }
 
+# nota su input
+#### le attuali pipeline non gestiscono valori NaN.
+#### questo vale sia per il pipeline di prediction che il pipeline di training.
+#### si deve utilizzare un DEFAULT per ogni campo.
+
 # config file
 ##### config file contiene le variabili utilizzati nelle classi [config](https://github.com/bizhanzahedi/scindo_final_delivery/blob/main/config.py)
 
