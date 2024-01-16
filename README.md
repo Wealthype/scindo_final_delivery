@@ -1,5 +1,7 @@
 # Scindo Delivery
 
+##### versione di python: 3.8.0
+##### altre dipendenze: 
 #### il progetto è stato sviluppato per ottenere due api endpoint
 
 # 1) training pipeline
@@ -119,5 +121,11 @@
 
 ##### 5) le variabili di natura categorica vengono codificati (trasformati in bool)
        one_hot_encode
-    
+
+# ulteriori modifiche all'input:
+#### nel caso in cui servisse eliminare un campo di input:
+##### 1) si parte con aggiustamento del file config: si elimina (o si commenta) il campo in tutti i dizionari e in tutte le liste
+##### 2) si commenta ogni riga del codice sia nel training pipeline che nel prediction pipeline, che contiene quel campo (cerca semplicemente il nome del campo e commenta la riga del codice)
+##### 3) avvia il training pipeline (al fine di training si salva i modelli nuovi/giusti)
+##### 4) avvia la prediction
        
