@@ -87,7 +87,7 @@
         'sign': 1
     }
 
-##### sign è la decisione finale di algoritmi:
+##### sign è la decisione finale aggregata di algoritmi:
      sign =  {
          1 : non erogare il prestito
          0 : puoi erogare il prestito
