@@ -18,58 +18,58 @@
 ####   - predictor: interroga gli algoritmi di ML ([built_models](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/built_models)), di prior ([prior](https://github.com/bizhanzahedi/scindo_final_delivery/tree/main/prior_default_probability_loans/output_model)), e di BI 
 
 ####    l'input è un JSON del tipo:
-        {
-            "UserID": 1,
-            "User": {
-                "Behaviour": {
-                    "Default": false,
-                    "Device": 1,
-                    "Lifetime": 20220708,
-                    "OnboardingTime": 70,
-                    "RegistrationDatetime": "165353",
-                    "WeeklyVisitNumber": 1
-                },
-                "Finance": {
-                    "AvarageAccountSpending": 1,
-                    "AvarageCreditSpending": 1,
-                    "AvarageTransactionsAmount": 1.5,
-                    "RID" : 1,
-                    "Balance": {
-                        "Avg": 1.5,
-                        "Max": 1.5,
-                        "Min": 1.5,
-                        "Withdrawls": 1.5
-                    },
-                    "Cumsum": {
-                        "In": 1.5,
-                        "Out": 1.5
-                    },
-                    "EoP": {
-                        "Deposit": 1.5,
-                        "Investments": 1.5,
-                        "Loans": 1.5,
-                        "Mortgages": 1.5
-                    },
-                    "TotalLoans": {
-                        "Amount": 1.5,
-                        "Number": 1,
-                        "Salary": false
-                    }
-                },
-                "GenericInfo": {
-                    "Address": 1,
-                    "Birth": 19900607,
-                    "Gender": 1,
-                    "Type": 1
-                },
-                "Job": {
-                    "Education": 3,
-                    "Employed": true,
-                    "Position": 6,
-                    "Sector": 18
-                }
+{
+    "UserID": 1,
+    "User": {
+        "Behaviour": {
+            "Default": false,
+            "Device": 1,
+            "Lifetime": 20220708,
+            "OnboardingTime": 70,
+            "RegistrationDatetime": "165353",
+            "WeeklyVisitNumber": 1
+        },
+        "Finance": {
+            "AvarageAccountSpending": 1,
+            "AvarageCreditSpending": 1,
+            "AvarageTransactionsAmount": 1.5,
+            "RID" : 1,
+            "Balance": {
+                "Avg": 1.5,
+                "Max": 1.5,
+                "Min": 1.5,
+                "Withdrawls": 1.5
+            },
+            "Cumsum": {
+                "In": 1.5,
+                "Out": 1.5
+            },
+            "EoP": {
+                "Deposit": 1.5,
+                "Investments": 1.5,
+                "Loans": 1.5,
+                "Mortgages": 1.5
+            },
+            "TotalLoans": {
+                "Amount": 1.5,
+                "Number": 1,
+                "Salary": false
             }
+        },
+        "GenericInfo": {
+            "Address": 1,
+            "Birth": 19900607,
+            "Gender": 1,
+            "Type": 1
+        },
+        "Job": {
+            "Education": 3,
+            "Employed": true,
+            "Position": 6,
+            "Sector": 18
         }
+    }
+}
 ####    l'output è un JSON del tipo:
     {
         'UserID': 1, 
