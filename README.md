@@ -1,7 +1,7 @@
 # Scindo Delivery
 
-#### - versione di python: 3.8.0
-#### - altre dipendenze: [requirements](https://github.com/bizhanzahedi/scindo_final_delivery/blob/main/requirements.txt)
+###### - versione di python: 3.8.0
+###### - altre dipendenze: [requirements](https://github.com/bizhanzahedi/scindo_final_delivery/blob/main/requirements.txt)
 #### - il progetto è stato sviluppato per ottenere due api endpoint:
 
 # 1) training pipeline
